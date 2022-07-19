@@ -22,7 +22,7 @@ with dbtc_source as (
         context_page_referrer,
         'dbtc' as src
 
-    from {{ ref('stg_dbtc__tracks') }}
+    from {{ source('dbtc', 'stg_dbtc__link_clicked') }}
 
 ),
 
@@ -50,7 +50,7 @@ yahooquery_source as (
         context_page_referrer,
         'yahooquery' as src
 
-    from {{ ref('stg_yahooquery__tracks') }}
+    from {{ source('yahooquery', 'stg_yahooquery__link_clicked') }}
 
 )
 
