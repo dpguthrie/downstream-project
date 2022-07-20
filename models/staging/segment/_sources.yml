@@ -2,14 +2,14 @@ version: 2
 
 sources:
   - name: yahooquery
-    schema: upstream
+    schema: '{{ var("upstream_yahooquery_schema", "upstream") }}'
     tables:
       - name: stg_yahooquery__link_clicked
       - name: stg_yahooquery__pages
       - name: stg_yahooquery__tracks
 
   - name: dbtc
-    schema: upstream
+    schema: '{{ var("upstream_dbtc_schema", "upstream") }}'
     tables:
       - name: stg_dbtc__link_clicked
       - name: stg_dbtc__pages
