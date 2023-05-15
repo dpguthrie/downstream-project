@@ -21,7 +21,7 @@ with dbtc_source as (
         context_library_name,
         'dbtc' as src
 
-    from {{ source('dbtc', 'stg_dbtc__tracks') }}
+    from {{ ref('upstream', 'stg_dbtc__tracks') }}
 
 ),
 
@@ -48,7 +48,7 @@ yahooquery_source as (
         context_library_name,
         'yahooquery' as src
 
-    from {{ source('yahooquery', 'stg_yahooquery__tracks') }}
+    from {{ ref('upstream', 'stg_yahooquery__tracks') }}
 
 )
 

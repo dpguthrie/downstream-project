@@ -23,7 +23,7 @@ with dbtc_source as (
         context_user_agent,
         'dbtc' as src
 
-    from {{ source('dbtc', 'stg_dbtc__pages') }}
+    from {{ ref('upstream', 'stg_dbtc__pages') }}
 
 ),
 
@@ -52,7 +52,7 @@ yahooquery_source as (
         context_user_agent,
         'yahooquery' as src
 
-    from {{ source('yahooquery', 'stg_yahooquery__pages') }}
+    from {{ ref('upstream', 'stg_yahooquery__pages') }}
 
 )
 
